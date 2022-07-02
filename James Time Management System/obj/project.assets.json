@@ -8,23 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\james.vanmeter\\.nuget\\packages\\": {},
+    "C:\\Users\\james\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\james.vanmeter\\Documents\\programming\\CSharpCode\\CSharpPracticeCode\\CSharpGenerics\\StorageAppExample\\James Time Management System\\James Time Management System\\James Time Management System.csproj",
+      "projectUniqueName": "C:\\Users\\james\\Documents\\Programming\\Software Development\\CodeLouisville\\CSharp\\James Time Management Project\\James Time Management System\\James Time Management System.csproj",
       "projectName": "James Time Management System",
-      "projectPath": "C:\\Users\\james.vanmeter\\Documents\\programming\\CSharpCode\\CSharpPracticeCode\\CSharpGenerics\\StorageAppExample\\James Time Management System\\James Time Management System\\James Time Management System.csproj",
-      "packagesPath": "C:\\Users\\james.vanmeter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\james.vanmeter\\Documents\\programming\\CSharpCode\\CSharpPracticeCode\\CSharpGenerics\\StorageAppExample\\James Time Management System\\James Time Management System\\obj\\",
+      "projectPath": "C:\\Users\\james\\Documents\\Programming\\Software Development\\CodeLouisville\\CSharp\\James Time Management Project\\James Time Management System\\James Time Management System.csproj",
+      "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\james\\Documents\\Programming\\Software Development\\CodeLouisville\\CSharp\\James Time Management Project\\James Time Management System\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\james.vanmeter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\james\\NuGet.Config",
+        "C:\\Users\\james\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -32,7 +33,6 @@
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
