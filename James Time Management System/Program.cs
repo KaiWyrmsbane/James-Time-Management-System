@@ -1,40 +1,65 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using James_Time_Management_System;
 public class Program
 {
-    public static void Main(string[] args)
+    //features that are expected to be in program
+    //master loop
+    //unit test
+    //inheritance from parent classes
+    //conversion tool
+    static void Main(string[] args)
     {
-        //also might want to idiot proof this later on
-        //might want to consider making all this code within main it's own method
-        //Console.WriteLine("Welcome " + fullName);
-        Console.WriteLine("What would you like to do");
-        Console.WriteLine("1: Clock-in or Clock-out");
-        Console.WriteLine("2: Take time off work");
-        Console.WriteLine("3: Change account settings");
-        Console.WriteLine("4: Exit");
-        string WhatToDo = Console.ReadLine();
-        bool OptionTurnedOn = true;
-        while (OptionTurnedOn == true) {
-            switch (WhatToDo)
+        RunProgram();
+    }
+    static public void RunProgram()
+    {
+        //it would be nice if the driver was it's own method
+        Console.WriteLine("1 = Clock-in and Clock-out");
+        Console.WriteLine("2 = Request Time Off");
+        Console.WriteLine("3 = Edit Account Information");
+        Console.WriteLine("4 = Exit Time Management System");
+
+        var answer = Console.ReadLine();
+        var driver = new Program();
+        bool WantProgramToRun = true;
+
+        //put the actual value you want case to have when define case
+        while (WantProgramToRun)
+        {
+            switch (answer)
             {
                 case "1":
-                    Console.WriteLine("hello clock");
+                    driver.timeClock();
                     break;
                 case "2":
-                    Console.WriteLine("hello timeoff");
+                    driver.timeOff();
                     break;
                 case "3":
-                    Console.WriteLine("hello account");
+                    driver.account();
                     break;
-                default:
-                    OptionTurnedOn = false;
-                    break;
+                case "4":
+                    return;
             }
-            Console.WriteLine("What would you like to do");
-            Console.WriteLine("1: Clock-in or Clock-out");
-            Console.WriteLine("2: Take time off work");
-            Console.WriteLine("3: Change account settings");
-            Console.WriteLine("4: Exit");
-            WhatToDo = Console.ReadLine();
+            Console.WriteLine("Would you like to do something else: ");
+            Console.WriteLine("1 = Clock-in and Clock-out");
+            Console.WriteLine("2 = Request Time Off");
+            Console.WriteLine("3 = Edit Account Information");
+            Console.WriteLine("4 = Exit Time Management System");
+            answer = Console.ReadLine();
         }
+    }
+    public void timeClock()
+    {
+        var timeClock = new TimeClock();
+        timeClock.ClockInOrOut();
+    }
+    public void timeOff()
+    {
+        var timeOff = new TimeOff();
+        timeOff.RequestTimeOff();
+    }
+    public void account()
+    {
+        var account = new Account();
+        account.AccountMenu();
     }
 }
