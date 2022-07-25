@@ -6,60 +6,45 @@ public class Program
     //unit test
     //inheritance from parent classes
     //conversion tool
+
+    //TimeClock timetime = new TimeClock();
+    //bool userPresent = timetime.EmployeeIsClockedIn;
     static void Main(string[] args)
     {
         RunProgram();
     }
     static public void RunProgram()
     {
-        //it would be nice if the driver was it's own method
-        Console.WriteLine("1 = Clock-in and Clock-out");
+        TimeClock timeClock = new TimeClock();
+        TimeOff timeOff = new TimeOff();
+        Account account = new Account();
+        Console.WriteLine("1 = Clock-in or Clock-out");
         Console.WriteLine("2 = Request Time Off");
         Console.WriteLine("3 = Edit Account Information");
         Console.WriteLine("4 = Exit Time Management System");
-
         var answer = Console.ReadLine();
-        var driver = new Program();
-        bool WantProgramToRun = true;
-
-        //put the actual value you want case to have when define case
-        while (WantProgramToRun)
+        while (true)
         {
             switch (answer)
             {
                 case "1":
-                    driver.timeClock();
+                    timeClock.ClockInOrOut();
                     break;
                 case "2":
-                    driver.timeOff();
+                   // timeOff.;
                     break;
                 case "3":
-                    driver.account();
+                    //driver.account();
                     break;
                 case "4":
                     return;
             }
             Console.WriteLine("Would you like to do something else: ");
-            Console.WriteLine("1 = Clock-in and Clock-out");
+            Console.WriteLine("1 = Clock-in or Clock-out");
             Console.WriteLine("2 = Request Time Off");
             Console.WriteLine("3 = Edit Account Information");
             Console.WriteLine("4 = Exit Time Management System");
             answer = Console.ReadLine();
         }
-    }
-    public void timeClock()
-    {
-        var timeClock = new TimeClock();
-        timeClock.ClockInOrOut();
-    }
-    public void timeOff()
-    {
-        var timeOff = new TimeOff();
-        timeOff.RequestTimeOff();
-    }
-    public void account()
-    {
-        var account = new Account();
-        account.AccountMenu();
     }
 }
