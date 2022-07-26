@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "James Time Management System", "James Time Management System\James Time Management System.csproj", "{799B2465-0068-4523-9915-20F0E64F1A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "James Time Management System", "James Time Management System\James Time Management System.csproj", "{799B2465-0068-4523-9915-20F0E64F1A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "James Time Management Test", "James Time Management Test\James Time Management Test.csproj", "{BB5928A6-2453-47F4-A5A0-8FB664407480}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{799B2465-0068-4523-9915-20F0E64F1A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799B2465-0068-4523-9915-20F0E64F1A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{799B2465-0068-4523-9915-20F0E64F1A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5928A6-2453-47F4-A5A0-8FB664407480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5928A6-2453-47F4-A5A0-8FB664407480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5928A6-2453-47F4-A5A0-8FB664407480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5928A6-2453-47F4-A5A0-8FB664407480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
