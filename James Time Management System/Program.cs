@@ -2,13 +2,11 @@
 public class Program
 {
     //features that are expected to be in program
-    //master loop
+    //master loop----
     //unit test
-    //inheritance from parent classes
+    //inheritance from parent classes---
     //conversion tool
 
-    //TimeClock timetime = new TimeClock();
-    //bool userPresent = timetime.EmployeeIsClockedIn;
     static void Main(string[] args)
     {
         RunProgram();
@@ -23,6 +21,7 @@ public class Program
         Console.WriteLine("3 = Edit Account Information");
         Console.WriteLine("4 = Exit Time Management System");
         var answer = Console.ReadLine();
+        //master loop
         while (true)
         {
             switch (answer)
@@ -31,10 +30,10 @@ public class Program
                     timeClock.ClockInOrOut();
                     break;
                 case "2":
-                   // timeOff.;
+                    timeOff.TimeOffSubMenu();
                     break;
                 case "3":
-                    //driver.account();
+                    account.AccountSubMenu();
                     break;
                 case "4":
                     return;

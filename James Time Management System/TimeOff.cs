@@ -1,17 +1,50 @@
 ﻿using System;
 using System.Globalization;
 //create a conversion tool
-//create a method that ask if the user if thet are asking off more than one day
 //then make it  to where there is only a certain number of hours they can take off
-//the .Date.ToString("MM/dd/yyyy") will remove time from the date
-
+//be sure to add PTORenewal Date
 namespace James_Time_Management_System
 {
-    //DateTime.Today gives you only the date if you don't want the time
-    //Question: How to use the returns from other methods inside RequestTimeOff()
-    //be sure to add PTORenewal Date
     public class TimeOff : ParentClasses.Time
     {
-
+        //create a conversion tool
+        //then make it  to where there is only a certain number of hours they can take off
+        //be sure to add PTORenewal Date
+        //now that we have the logic i want to be able to save to a json file
+        //need a total amount of time they can take off so the user can't go over the alotted amount
+        public void TimeOffSubMenu()
+        {
+            float employeeHours = 8.0f;
+            Console.WriteLine("Are you taking off more than one day (yes/no): ");
+            string yesOrNo = Console.ReadLine();
+            if (yesOrNo == "yes")
+            {
+                Console.WriteLine("Enter the first date (MM/DD/YYYY);");
+                DateTime startDate = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the second date (MM/DD/YYYY)");
+                DateTime endDate = DateTime.Parse(Console.ReadLine());
+                MoreThanADayOff(startDate, endDate, employeeHours);
+            }
+            else
+            {
+                Console.WriteLine("Enter the Day you wish to take off (MM/DD/YYYY);");
+                DateTime startDate = DateTime.Parse(Console.ReadLine());
+                DayOff(startDate, employeeHours);
+            }
+        }
+        public DateTime DayOff(DateTime startDate, float userHours)
+        {
+            Console.WriteLine($"You are off on {startDate} all day for {userHours} hours`");
+            return startDate;
+        }
+        public TimeSpan MoreThanADayOff(DateTime startDate, DateTime endDate, float userHours)
+        {
+            TimeSpan DaysPassed = endDate.Subtract(startDate);
+            Console.WriteLine(DaysPassed);
+            var days = DaysPassed.Days;
+            userHours = userHours * days;
+            Console.WriteLine($"You are off for {userHours} hours, from {startDate} - {endDate}");
+            return DaysPassed;
+        }
     }
 }

@@ -8,6 +8,7 @@
         public bool EmployeeIsClockedIn { get; set; }
         public DateTime startTime { get; set; }
 
+        //Remember
         //need to add PTORenewal date
         //Sicktime time, Vacation time, Emergency Time
         public bool ClockInOrOut()
