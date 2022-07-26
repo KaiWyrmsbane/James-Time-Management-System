@@ -2,7 +2,7 @@ using James_Time_Management_System;
 
 namespace James_Time_Management_Test
 {
-    public class UnitTest1
+    public class TimeManagementTestMethods
     {
         [Fact]
         public void TimeClockHoursWorkedTest()
