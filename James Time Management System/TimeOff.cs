@@ -7,14 +7,15 @@ namespace James_Time_Management_System
 {
     public class TimeOff : ParentClasses.Time
     {
-        //create a conversion tool
         //then make it  to where there is only a certain number of hours they can take off
         //be sure to add PTORenewal Date
-        //now that we have the logic i want to be able to save to a json file
         //need a total amount of time they can take off so the user can't go over the alotted amount
         public void TimeOffSubMenu()
         {
-            float employeeHours = 8.0f;
+            //vacationhours = 112 hours
+            //sickhours = 56 hours
+            //emergencyhours = 24 hours
+            employeeHours = 8.0f;
             Console.WriteLine("Are you taking off more than one day (yes/no): ");
             string yesOrNo = Console.ReadLine();
             if (yesOrNo == "yes")
@@ -47,5 +48,31 @@ namespace James_Time_Management_System
             Console.WriteLine($"You are off for {userDailyHours} hours, from {startDate} - {endDate}");
             return DaysPassed;
         }
+
+        //lets create a conversion tool for points to hours
+        /*
+        1.0 point = 8.0 hours
+        0.5 point = 4.0 hours
+        0.25 point = 2.0 hours
+        0.125 point = 1.0 hours
+        Kassi Approved ******
+        public float PointsToHours(float employeeHours, float employeePoints)
+        {
+         Console.WriteLine("Which would you like to do");
+         Console.WriteLine("1: Convert hours to points");
+         Console.WriteLine("2: Convert points to hours");
+         var answer = Console.ReadLine();
+         if(answer == "1")
+          {
+            employeePoints = 0.125 * employeeHours;
+          }
+         else
+          {
+            employeeHours = employeeHours / 0.125;
+          }
+
+        }
+
+        */
     }
 }

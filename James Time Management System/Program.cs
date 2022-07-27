@@ -3,7 +3,7 @@ public class Program
 {
     //features that are expected to be in program
     //master loop----
-    //unit test
+    //unit test---
     //inheritance from parent classes---
     //conversion tool
 
@@ -13,6 +13,7 @@ public class Program
     }
     static public void RunProgram()
     {
+        //Master loop
         TimeClock timeClock = new TimeClock();
         TimeOff timeOff = new TimeOff();
         Account account = new Account();
@@ -21,7 +22,6 @@ public class Program
         Console.WriteLine("3 = Edit Account Information");
         Console.WriteLine("4 = Exit Time Management System");
         var answer = Console.ReadLine();
-        //master loop
         while (true)
         {
             switch (answer)

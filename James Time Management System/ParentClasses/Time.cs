@@ -3,9 +3,10 @@
     public class Time
     {
         //inheritance
-        public float vacationTime { get; set; }
-        public float sickTime { get; set; }
-        public float emergencyTime { get; set; }
+        public float vacationHours { get; set; } = 0;
+        public float sickHours { get; set; } = 0;
+        public float emergencyHours { get; set; } = 0;
         public string PTORenewal { get; set; }
+        public float employeeHours { get; set; }
     }
 }
