@@ -53,7 +53,6 @@
             {
                 EmployeeIsClockedIn = false;
                 Console.WriteLine("You have clocked-out");
-                // need these to be times in hours
                 HoursWorked(startTime,DateTime.Now);
             }
          

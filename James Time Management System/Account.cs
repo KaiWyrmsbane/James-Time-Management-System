@@ -18,7 +18,7 @@
                     ChangeEmail();
                     break;
                 case "3":
-                    DisplayAccountInfo();
+                    DisplayAccountInfo(fullName,emailAddress);
                     break;
                 default:
                     break;
@@ -31,9 +31,9 @@
             firstName = Console.ReadLine();
             Console.Write("Last name: ");
             lastName = Console.ReadLine();
-            FullName = $"{firstName} {lastName}";
+            fullName = $"{firstName} {lastName}";
             Console.WriteLine($"Your name is {firstName} {lastName}");
-            return FullName;
+            return fullName;
         }
         public string ChangeEmail()
         {
@@ -42,10 +42,11 @@
             Console.WriteLine($"you new email is: {emailAddress}");
             return emailAddress;
         }
-        public void DisplayAccountInfo()
+        public string DisplayAccountInfo(string fullName, string emailAddress)
         {
-            Console.WriteLine(FullName);
+            Console.WriteLine(fullName);
             Console.WriteLine(emailAddress);
+            return $"Fullname is {fullName}, emailaddress is {emailAddress}";
         }
     }
 }

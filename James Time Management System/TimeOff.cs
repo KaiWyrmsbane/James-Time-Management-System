@@ -32,18 +32,19 @@ namespace James_Time_Management_System
                 DayOff(startDate, employeeHours);
             }
         }
-        public DateTime DayOff(DateTime startDate, float userHours)
+        public DateTime DayOff(DateTime startDate, float userDailyHours)
         {
-            Console.WriteLine($"You are off on {startDate} all day for {userHours} hours`");
+            Console.WriteLine($"You are off on {startDate} all day for {userDailyHours} hours`");
             return startDate;
         }
-        public TimeSpan MoreThanADayOff(DateTime startDate, DateTime endDate, float userHours)
+        //I might want to make userDailyHours in it's own method
+        public TimeSpan MoreThanADayOff(DateTime startDate, DateTime endDate, float userDailyHours)
         {
             TimeSpan DaysPassed = endDate.Subtract(startDate);
             Console.WriteLine(DaysPassed);
             var days = DaysPassed.Days;
-            userHours = userHours * days;
-            Console.WriteLine($"You are off for {userHours} hours, from {startDate} - {endDate}");
+            userDailyHours = userDailyHours * days;
+            Console.WriteLine($"You are off for {userDailyHours} hours, from {startDate} - {endDate}");
             return DaysPassed;
         }
     }
