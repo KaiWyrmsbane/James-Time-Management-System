@@ -62,7 +62,7 @@
         public TimeSpan HoursWorked(DateTime startTime, DateTime endTime)
         {
             TimeSpan timeWorked = endTime.Subtract(startTime);
-            Console.WriteLine($"you have worked: {timeWorked.Hours} hours, {timeWorked.Minutes} Minutes, {timeWorked.Seconds}");
+            Console.WriteLine($"you have worked: {timeWorked.Hours} hours, {timeWorked.Minutes} Minutes, {timeWorked.Seconds} seconds");
             return timeWorked;
         }
     }

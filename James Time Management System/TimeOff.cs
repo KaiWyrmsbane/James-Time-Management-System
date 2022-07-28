@@ -16,26 +16,47 @@ namespace James_Time_Management_System
             //sickhours = 56 hours
             //emergencyhours = 24 hours
             employeeHours = 8.0f;
-            Console.WriteLine("Are you taking off more than one day (yes/no): ");
-            string yesOrNo = Console.ReadLine();
-            if (yesOrNo == "yes")
+            Console.WriteLine("1: Taking a day off");
+            Console.WriteLine("2: Taking Multiple days off");
+            Console.WriteLine("3: Convert time");
+            string TimeOffSubMenuAnswer = Console.ReadLine();
+            switch (TimeOffSubMenuAnswer)
             {
-                Console.WriteLine("Enter the first date (MM/DD/YYYY);");
-                DateTime startDate = DateTime.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the second date (MM/DD/YYYY)");
-                DateTime endDate = DateTime.Parse(Console.ReadLine());
-                MoreThanADayOff(startDate, endDate, employeeHours);
+                case "1":
+                    Console.WriteLine("Enter the Day you wish to take off (MM/DD/YYYY);");
+                    DateTime startDate = DateTime.Parse(Console.ReadLine());
+                    DayOff(startDate, employeeHours);
+                    break;
+                case "2":
+                    Console.WriteLine("Enter the first date (MM/DD/YYYY);");
+                    startDate = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter the second date (MM/DD/YYYY)");
+                    DateTime endDate = DateTime.Parse(Console.ReadLine());
+                    MoreThanADayOff(startDate, endDate, employeeHours);
+                    break;
+                case "3":
+                    Console.WriteLine("1: Convert Points to hours");
+                    Console.WriteLine("2: Convert hours to Points");
+                    string conversionAnswer = Console.ReadLine();
+                    if (conversionAnswer == "1")
+                    {
+                        Console.WriteLine("Enter the Number of points you want to convert");
+                        float Points = float.Parse(Console.ReadLine());
+                        PointToHourConversion(Points);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter the Number of hours you want to convert");
+                        float hours = float.Parse(Console.ReadLine());
+                        HourToPointConversion(hours);
+                    }
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Enter the Day you wish to take off (MM/DD/YYYY);");
-                DateTime startDate = DateTime.Parse(Console.ReadLine());
-                DayOff(startDate, employeeHours);
-            }
+
         }
         public DateTime DayOff(DateTime startDate, float userDailyHours)
         {
-            Console.WriteLine($"You are off on {startDate} all day for {userDailyHours} hours`");
+            Console.WriteLine($"You are off on {startDate} for {userDailyHours} hours`");
             return startDate;
         }
         //I might want to make userDailyHours in it's own method
@@ -49,30 +70,20 @@ namespace James_Time_Management_System
             return DaysPassed;
         }
 
-        //lets create a conversion tool for points to hours
-        /*
-        1.0 point = 8.0 hours
-        0.5 point = 4.0 hours
-        0.25 point = 2.0 hours
-        0.125 point = 1.0 hours
-        Kassi Approved ******
-        public float PointsToHours(float employeeHours, float employeePoints)
+        //Conversion tool
+        // 0.125 point = 1.0 hours
+        //make sure that the public employeeHours and employeePoints will not be affected
+        public float HourToPointConversion(float employeeHours)
         {
-         Console.WriteLine("Which would you like to do");
-         Console.WriteLine("1: Convert hours to points");
-         Console.WriteLine("2: Convert points to hours");
-         var answer = Console.ReadLine();
-         if(answer == "1")
-          {
-            employeePoints = 0.125 * employeeHours;
-          }
-         else
-          {
-            employeeHours = employeeHours / 0.125;
-          }
-
+            employeePoints = 0.125f * employeeHours;
+            Console.WriteLine($"The equivalence is {employeePoints} points");
+            return employeePoints;
         }
-
-        */
+        public float PointToHourConversion(float employeePoints)
+        {
+            employeeHours = employeePoints / 0.125f;
+            Console.WriteLine($"The equivalence is {employeeHours} hours");
+            return employeeHours;
+        }
     }
 }
