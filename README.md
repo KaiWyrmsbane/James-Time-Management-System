@@ -11,6 +11,11 @@ page the user will be able to see the number of PTO hours they have and the rene
 * Edit account settings such as name and email address
 
 "Wireframe will be coming soon"
+## Features Used In Project
+1. Master Loop
+2. Unit Testing
+3. Inheritance from parent classes
+4. Conversion Tool
 
 ## How to install this example and see how it works
 1. Install Visual Studio 2022
