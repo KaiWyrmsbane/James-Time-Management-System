@@ -5,12 +5,10 @@
         public bool EmployeeIsClockedIn { get; set; }
         public DateTime startTime { get; set; }
 
-        //Remember
-        //need to add PTORenewal date
-        //Sicktime time, Vacation time, Emergency Time
         public bool ClockInOrOut()
         {
             DisplayPTORenewalDate();
+            DisplayPTOTime();
             Console.WriteLine("1: Clock-In");
             Console.WriteLine("2: Clock-Out");
             var clockInOrOut = Console.ReadLine();

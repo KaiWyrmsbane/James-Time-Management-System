@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Globalization;
-//create a conversion tool
-//then make it  to where there is only a certain number of hours they can take off
-//be sure to add PTORenewal Date
 namespace James_Time_Management_System
 {
     public class TimeOff : ParentClasses.Time
     {
         //then make it  to where there is only a certain number of hours they can take off
-        //be sure to add PTORenewal Date
         //need a total amount of time they can take off so the user can't go over the alotted amount
         public void TimeOffSubMenu()
         {
-            //vacationHours = 112.0f;
-            //sickHours = 56.0f;
-            //emergencyHours = 24.0f;
             employeeHours = 8.0f;
             DisplayPTORenewalDate();
+            DisplayPTOTime();
             Console.WriteLine("1: Taking a day off");
             Console.WriteLine("2: Taking Multiple days off");
             Console.WriteLine("3: Convert time");
@@ -26,6 +20,15 @@ namespace James_Time_Management_System
                 case "1":
                     Console.WriteLine("Enter the Day you wish to take off (MM/DD/YYYY);");
                     DateTime startDate = DateTime.Parse(Console.ReadLine());
+
+                    //new code-------------------------------
+                    Console.WriteLine("What Time are you taking from");
+                    Console.WriteLine("1: Sick");
+                    Console.WriteLine("2: Vacation");
+                    Console.WriteLine("3: Emergency");
+                    var timeTypeAnswer = Console.ReadLine();
+                    //---------------------------------------
+
                     DayOff(startDate, employeeHours);
                     break;
                 case "2":
@@ -73,7 +76,6 @@ namespace James_Time_Management_System
 
         //Conversion tool
         // 0.125 point = 1.0 hours
-        //make sure that the public employeeHours and employeePoints will not be affected
         public float HourToPointConversion(float employeeHours)
         {
             employeePoints = 0.125f * employeeHours;

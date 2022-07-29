@@ -35,6 +35,7 @@ public class Program
                     account.AccountSubMenu();
                     break;
                 case "4":
+                    //exit
                     return;
             }
             Console.WriteLine("Would you like to do something else: ");
