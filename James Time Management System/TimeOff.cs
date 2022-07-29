@@ -4,8 +4,6 @@ namespace James_Time_Management_System
 {
     public class TimeOff : ParentClasses.Time
     {
-        //then make it  to where there is only a certain number of hours they can take off
-        //need a total amount of time they can take off so the user can't go over the alotted amount
         public void TimeOffSubMenu()
         {
             employeeHours = 8.0f;
@@ -28,15 +26,15 @@ namespace James_Time_Management_System
                     switch (timeTypeAnswer)
                     {
                         case "1":
-                            DayOff(startDate, employeeHours);
+                            DayOff(startDate,sickHours);
                             sickHours -= employeeHours;
                             break;
                         case "2":
-                            DayOff(startDate, employeeHours);
+                            DayOff(startDate,vacationHours);
                             vacationHours -= employeeHours;
                             break;
                         case "3":
-                            DayOff(startDate, employeeHours);
+                            DayOff(startDate,emergencyHours);
                             emergencyHours -= employeeHours;
                             break;
                     }
@@ -87,21 +85,38 @@ namespace James_Time_Management_System
             }
 
         }
-        public DateTime DayOff(DateTime startDate, float userDailyHours)
+        public DateTime DayOff(DateTime startDate, float timeType)
         {
-            Console.WriteLine($"You are off on {startDate} for {userDailyHours} hours`");
+            if (timeType > 0)
+            {
+                Console.WriteLine($"You are off on {startDate} for {employeeHours} hours`");
+            }
+            else if(timeType == 0)
+            {
+                employeeHours = 0;
+                Console.WriteLine($"You have no PTO to use!");
+            }
+            else
+            {
+                employeeHours = 0;
+                Console.WriteLine($"You have exceeded your approved PTO hours");
+            }
             return startDate;
         }
-        //I might want to make userDailyHours in it's own method
         public TimeSpan MoreThanADayOff(DateTime startDate, DateTime endDate, float timeType)
         {
             TimeSpan DaysPassed = endDate.Subtract(startDate);
             var days = DaysPassed.Days;
             employeeHours = employeeHours * days;
-            timeType = timeType - employeeHours;
-            if (timeType >= 0)
+            timeType = (timeType + 1) - employeeHours;
+            if (timeType > 0)
             {
                 Console.WriteLine($"You are off from {startDate} to {endDate} using {employeeHours} hours of PTO time");
+            }
+            else if (timeType == 0)
+            {
+                employeeHours = 0;
+                Console.WriteLine($"You have no PTO to use!");
             }
             else
             {

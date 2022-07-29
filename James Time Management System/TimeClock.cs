@@ -8,7 +8,6 @@
         public bool ClockInOrOut()
         {
             DisplayPTORenewalDate();
-            DisplayPTOTime();
             Console.WriteLine("1: Clock-In");
             Console.WriteLine("2: Clock-Out");
             var clockInOrOut = Console.ReadLine();
