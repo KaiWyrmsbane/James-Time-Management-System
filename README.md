@@ -10,7 +10,14 @@ page the user will be able to see the number of PTO hours they have and the rene
 * Decide to take time off on specific days whether it be Vacation, Sick, or emergency time while seeing PTO renewal date.
 * Edit account settings such as name and email address
 
-"Wireframe will be coming soon"
+## Wireframe
+![image](https://user-images.githubusercontent.com/70355800/181649433-d07c0f24-6f16-48bd-b363-dfff506cea2c.png)
+
+## Features Used In Project
+1. Master Loop
+2. Unit Testing
+3. Inheritance from parent classes
+4. Conversion Tool
 
 ## How to install this example and see how it works
 1. Install Visual Studio 2022
