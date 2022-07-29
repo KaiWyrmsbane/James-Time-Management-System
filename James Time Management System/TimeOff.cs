@@ -20,23 +20,52 @@ namespace James_Time_Management_System
                 case "1":
                     Console.WriteLine("Enter the Day you wish to take off (MM/DD/YYYY);");
                     DateTime startDate = DateTime.Parse(Console.ReadLine());
-
-                    //new code-------------------------------
                     Console.WriteLine("What Time are you taking from");
                     Console.WriteLine("1: Sick");
                     Console.WriteLine("2: Vacation");
                     Console.WriteLine("3: Emergency");
                     var timeTypeAnswer = Console.ReadLine();
-                    //---------------------------------------
-
-                    DayOff(startDate, employeeHours);
+                    switch (timeTypeAnswer)
+                    {
+                        case "1":
+                            DayOff(startDate, employeeHours);
+                            sickHours -= employeeHours;
+                            break;
+                        case "2":
+                            DayOff(startDate, employeeHours);
+                            vacationHours -= employeeHours;
+                            break;
+                        case "3":
+                            DayOff(startDate, employeeHours);
+                            emergencyHours -= employeeHours;
+                            break;
+                    }
                     break;
                 case "2":
                     Console.WriteLine("Enter the first date (MM/DD/YYYY);");
                     startDate = DateTime.Parse(Console.ReadLine());
                     Console.WriteLine("Enter the second date (MM/DD/YYYY)");
                     DateTime endDate = DateTime.Parse(Console.ReadLine());
-                    MoreThanADayOff(startDate, endDate, employeeHours);
+                    Console.WriteLine("What Time are you taking from");
+                    Console.WriteLine("1: Sick");
+                    Console.WriteLine("2: Vacation");
+                    Console.WriteLine("3: Emergency");
+                    timeTypeAnswer = Console.ReadLine();
+                    switch (timeTypeAnswer)
+                    {
+                        case "1":
+                            MoreThanADayOff(startDate,endDate,sickHours);
+                            sickHours -= employeeHours;
+                            break;
+                        case "2":
+                            MoreThanADayOff(startDate,endDate,vacationHours);
+                            vacationHours -= employeeHours;
+                            break;
+                        case "3":
+                            MoreThanADayOff(startDate,endDate,emergencyHours);
+                            emergencyHours -= employeeHours;
+                            break;
+                    }
                     break;
                 case "3":
                     Console.WriteLine("1: Convert Points to hours");
@@ -64,13 +93,21 @@ namespace James_Time_Management_System
             return startDate;
         }
         //I might want to make userDailyHours in it's own method
-        public TimeSpan MoreThanADayOff(DateTime startDate, DateTime endDate, float userDailyHours)
+        public TimeSpan MoreThanADayOff(DateTime startDate, DateTime endDate, float timeType)
         {
             TimeSpan DaysPassed = endDate.Subtract(startDate);
-            Console.WriteLine(DaysPassed);
             var days = DaysPassed.Days;
-            userDailyHours = userDailyHours * days;
-            Console.WriteLine($"You are off for {userDailyHours} hours, from {startDate} - {endDate}");
+            employeeHours = employeeHours * days;
+            timeType = timeType - employeeHours;
+            if (timeType >= 0)
+            {
+                Console.WriteLine($"You are off from {startDate} to {endDate} using {employeeHours} hours of PTO time");
+            }
+            else
+            {
+                employeeHours = 0;
+                Console.WriteLine($"You have exceeded your approved PTO hours");
+            }
             return DaysPassed;
         }
 
