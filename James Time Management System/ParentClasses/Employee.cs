@@ -3,7 +3,7 @@
     public class Employee
     {
         //inheritance
-        public int EmployeeId { get; set; }
+        public int EmployeeId { get; set; } = 14514;
         public string fullName { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }

@@ -2,9 +2,6 @@
 {
     public class TimeClock : ParentClasses.Time
     {
-        //if time permits
-        //track datetime.hours when user clocks in to the point they clock out
-        //be able to tell whether user is clocked-in or clocked-out
         public bool EmployeeIsClockedIn { get; set; }
         public DateTime startTime { get; set; }
 
@@ -13,6 +10,7 @@
         //Sicktime time, Vacation time, Emergency Time
         public bool ClockInOrOut()
         {
+            DisplayPTORenewalDate();
             Console.WriteLine("1: Clock-In");
             Console.WriteLine("2: Clock-Out");
             var clockInOrOut = Console.ReadLine();

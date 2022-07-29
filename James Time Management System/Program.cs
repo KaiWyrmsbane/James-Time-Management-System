@@ -1,11 +1,10 @@
 ﻿using James_Time_Management_System;
 public class Program
 {
-    //features that are expected to be in program
-    //master loop----
-    //unit test---
-    //inheritance from parent classes---
-    //conversion tool
+    //master loop----Program
+    //unit test---for all classes
+    //inheritance---Employee,Time
+    //conversion tool---TimeClockHoursWorkedTest
 
     static void Main(string[] args)
     {

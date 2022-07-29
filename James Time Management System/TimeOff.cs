@@ -12,10 +12,11 @@ namespace James_Time_Management_System
         //need a total amount of time they can take off so the user can't go over the alotted amount
         public void TimeOffSubMenu()
         {
-            //vacationhours = 112 hours
-            //sickhours = 56 hours
-            //emergencyhours = 24 hours
+            //vacationHours = 112.0f;
+            //sickHours = 56.0f;
+            //emergencyHours = 24.0f;
             employeeHours = 8.0f;
+            DisplayPTORenewalDate();
             Console.WriteLine("1: Taking a day off");
             Console.WriteLine("2: Taking Multiple days off");
             Console.WriteLine("3: Convert time");

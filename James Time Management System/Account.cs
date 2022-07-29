@@ -44,6 +44,7 @@
         }
         public string DisplayAccountInfo(string fullName, string emailAddress)
         {
+            Console.WriteLine(EmployeeId);
             Console.WriteLine(fullName);
             Console.WriteLine(emailAddress);
             return $"Fullname is {fullName}, emailaddress is {emailAddress}";
